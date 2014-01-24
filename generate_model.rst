@@ -1,6 +1,26 @@
+Résumé:
+=======
+
+Generation du SQL:
+------------------
+
+Les paquets à installer:
+
+    # apt-get install dia libparse-dia-sql-perl
+    
+La construction du diagramme se fait d'après la même méthode que pour tedia2sql [left.subtree].
+C'est la ligne de commande 
+    
+    $ parsediasql --file  model.dia --db mysql-innodb
+    
+    $ parsediasql --file  model.dia --db mysql-innodb 1>/dev/null
+    
+    $ parsediasql --file  model.dia --db mysql-innodb 2>/dev/null
+    
 Generation du "model.py":
 =========================
-Génération du SQL avec "tedia2sql":
+
+Génération du SQL avec "tedia2sql": Prbl...
 ----------------------------------- 
 Il y a un tutoriel bien pratique pour générer les tables sql avec Dia [sql_dia].
 Le diagramme est crée comme un diagramme de classe UML habituel, avec les attributs pour les données.
@@ -17,7 +37,7 @@ Sur le wiki de gnome [wiki.gnome] il y a toute une liste d'autres outils sucepti
 Attention il nécessite python-tk. 
 Et donne quand même une erreur, apparemment notre version de python-tk est trop récente il lui manque /usr/lib/python2.7/lib-tk/Tix.py.
 
-Generation du SQL avec "umbrello":
+Generation du SQL avec "umbrello": Prbl...
 ----------------------------------
 Un autre essai de génération de sql a été fait avec [umbrello]. 
 Il ne crée que les tables sans les attributs !!!
@@ -28,7 +48,7 @@ Mais le résultat ne contient ni tables ni attributs!
 Apparemment le format .xmi poserait pas mal de problèmes en fonction des versions d'UML et des logiciels [interopératibilité].
 D'après cette précédente page, le meilleur générateur serait [AndroMDA].
 
-Génération du SQL avec "AndroMDA":
+Génération du SQL avec "AndroMDA": Prbl...
 --------------------------------
 C'est un projet en licence BSD utilisable pour tout OS. 
 Pour l'installer il faut aussi avoir maven2 [Build AndroMDA] 
@@ -39,8 +59,7 @@ Attention, il y a sur leur explication une commande à passer, mais elle ne pass
 
     ~/andromda-bin-3.3 $ MAVEN_OPTS=-XX:MaxPermSize=256m -Xmx512m
     
-Problème de Java:
------------------
+Problème de version/éditeur de Java:
 
     genevieve@genevieve-Studio-1535 ~/andromda-bin-3.3 $ mvn install -Pandromda-full,local
 
@@ -88,6 +107,19 @@ Problème de Java:
 L'erreur viendrait d'un problème de version de java pour cette erreur [mojo] 
 En réponse ils renvoie vers une solution sur stackoverflow, à essayer [maven - openjdk].
 
+Génération du SQL avec "parsediasql": OK!!!
+-------------------------------------------
+En fait c'était précisé dans un cadre sur la référence de tedia2sql, celui ci ne marche plus à partir de Dia 0.97! [tedia2sql]
+Ils renvoient vers leur site [Parse-Dia-SQL].
+
+    # apt-get install  libparse-dia-sql-perl
+    
+    $ parsediasql --file  model.dia --db mysql-innodb
+
+On obtient dans la sortie standard le fichier .sql généré.
+Cela permet déjà d'affiner le diagramme.
+La manière plus évoluée, qui permet d'avoir entre autre les clés étrangères et bien plus, est décrite pour tedia2sql [left.subtree].
+
 References:
 ===========
 
@@ -117,5 +149,8 @@ References:
 
 [maven - openjdk] https://stackoverflow.com/questions/9518523/installing-maven2-without-openjdk
 
+[Parse-Dia-SQL] http://search.cpan.org/dist/Parse-Dia-SQL/
+
+[left.subtree] http://left.subtree.org/2007/12/05/database-design-with-dia/
 
 
