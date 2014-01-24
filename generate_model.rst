@@ -1,14 +1,21 @@
 Résumé:
 =======
 
-Generation du SQL:
-------------------
-
 Les paquets à installer:
 
     # apt-get install dia libparse-dia-sql-perl
     
+Création du diagramme:
+----------------------
+
 La construction du diagramme se fait d'après la même méthode que pour tedia2sql [left.subtree].
+NB: Les id doivent être "protected" pour que ça compile, etc...
+
+Attention pour les "Component" la version Debian marche plutôt mal 
+
+Generation du SQL:
+------------------
+
 C'est la ligne de commande 
     
     $ parsediasql --file  model.dia --db mysql-innodb
