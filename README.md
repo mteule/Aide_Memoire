@@ -1,4 +1,4 @@
 Aide_Memoire
 ============
 
-Receuil des aides mémoires utilisés pour différents sujets
+Recueil des aides mémoires utilisés pour différents sujets
