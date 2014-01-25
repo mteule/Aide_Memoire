@@ -11,19 +11,45 @@ Création du diagramme:
 La construction du diagramme se fait d'après la même méthode que pour tedia2sql [left.subtree].
 NB: Les id doivent être "protected" pour que ça compile, etc...
 
-Attention pour les "Component" la version Debian marche plutôt mal 
+Attention pour les "Component", au moment d'écrire les INSERT rien ne sert de s'acharner à double cliquer partout.
+Il faut cliquer sur l'icône pour écrire. 
+De même pour coller il faut l'icône ou le menu édition, mais c'est possible.
+
+La seule partie du tutoriel qui n'a pas marché, c'est les Typemap.
+
 
 Generation du SQL:
 ------------------
 
-C'est la ligne de commande 
+C'est par la ligne de commande avec "parsediasql":
     
     $ parsediasql --file  model.dia --db mysql-innodb
     
     $ parsediasql --file  model.dia --db mysql-innodb 1>/dev/null
     
-    $ parsediasql --file  model.dia --db mysql-innodb 2>/dev/null
+    $ parsediasql --file model.dia --db mysql-innodb 2>/dev/null 1>schema.sql
     
+    $ geany schema.sql 
+    
+Vérification du SQL:
+--------------------
+
+    $ mysql -u root -p
+    
+    mysql> create database test_dia;
+    
+    mysql> show databases;
+    
+    mysql> use test_dia
+    
+    mysql> source schema.sql
+    
+    mysql> show tables;
+    
+    mysql> \u mysql
+
+    mysql> drop database test_dia;
+ 
 Generation du "model.py":
 =========================
 
