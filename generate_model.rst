@@ -15,8 +15,11 @@ Attention pour les "Component", au moment d'écrire les INSERT rien ne sert de s
 Il faut cliquer sur l'icône pour écrire. 
 De même pour coller il faut l'icône ou le menu édition, mais c'est possible.
 
-La seule partie du tutoriel qui n'a pas marché, c'est les Typemap.
+La seule partie du tutoriel qui n'a pas marché, c'est les Typemaps.
+Il est possible de les écrire mais il ne sont pas reconnus par "parsediasql" au moment de la compilation.
+Ce sera indiqué dans le fichier .sql
 
+Il reste donc à corriger ce point.
 
 Generation du SQL:
 ------------------
