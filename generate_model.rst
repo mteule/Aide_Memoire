@@ -19,7 +19,7 @@ La seule partie du tutoriel qui n'a pas marché, c'est les Typemaps.
 Il est possible de les écrire mais il ne sont pas reconnus par "parsediasql" au moment de la compilation.
 Ce sera indiqué dans le fichier .sql
 
-Il reste donc à corriger ce point.
+Il restera donc à corriger ce point.
 
 Generation du SQL: parsediasql
 ------------------------------
@@ -52,6 +52,11 @@ Vérification du SQL: mysql ou sqlite
     mysql> \u mysql
 
     mysql> drop database test_dia;
+    
+Génération du fichier "model.py":
+---------------------------------
+
+
  
 Generation du SQL à partir d'un Diagramme:
 ==========================================
@@ -213,8 +218,8 @@ http://pylonsbook.com/en/1.1/introducing-the-model-and-sqlalchemy.html#metadata-
 
 Accessoirement il y a là des conseils utiles pour l'unicode.
 
-Edition du model.py declaratif (mysql):
----------------------------------
+Création du model.py declaratif (mysql):
+----------------------------------------
 
     http://turbogears.org/2.1/docs/main/Utilities/sqlautocode.html
 
@@ -223,6 +228,68 @@ Le modèle de la doc de sqlalchemy est apparemment une variante améliorée du m
 C'est "the declarative style of SQLAlchemy model definition".
 Il peut être théoriquement être obtenu en ajoutant simplement l'option " -d "
 
+    ~/ $ sqlautocode mysql://monty:passwd@localhost/test_dia -d
+    
+Cette commande marche et affiche EXACTEMENT ce qu'il faut avoir pour utiliser la doc sqlalchemy.
+
+Il n'y a pratiquement plus rien à faire, à part vérifier qu'il n'y ait pas de problème d'encodage de caractères.
+Et éventuellement rajouter des fonctions init().
+
+Edition du model.py declaratif (mysql):
+---------------------------------------
+* "__init__()"
+Il y a des conseils dans la doc officielle sqlalchemy pour faire un modèle déclaratif "foolproof". 
+Et aussi une bonne raison de faire un __init__() dédié, pour ne pas avoir à se retapper les noms de colonne à la création de l'objet.
+
+* Le problème du Latin-1:
+
+/usr/lib/python2.7/dist-packages/sqlalchemy/dialects/mysql $ gedit mysqldb.py
+Ici dans les commentaires il y a un multitude d'explication sur comment s'éviter des embrouilles avec le Mysql en l'encoding Latin-1
+
+http://docs.sqlalchemy.org/en/rel_0_8/dialects/mysql.html
+Dans cette page de Doc sur Mysql, seront expliqués les divers problèmes qu'il serait possible de rencontrer avec les types, et surtout il y a la bonne manière d'exprimer les clés étrangères.
+
+
+
+Edition du model.py declaratif (sqlite):
+----------------------------------------
+Pour générer le fichier "model.py" de la bonne manière avec les bons types de colonne, il faudrait utiliser sqlite. 
+Malheureusement il y a toute une série de problèmes répertoriés avec sqlite, consignés à la fin du message "Re: Essai sqlautocode du 30 janvier 2014 18:37".
+
+Il va falloir prendre la commande adaptée dans la liste des formats d'export disponibles pour Dia avec parsedia2sql:
+http://search.cpan.org/dist/Parse-Dia-SQL/
+
+    ~/StationMeteo/doc/model $ parsediasql --file model.dia --db sqlite3 1>schema.sqlite3.sql
+
+Remarque: quand on se trompe de db avec sqlite3fk i donne la liste des db disponibles. 
+Il peut aussi râler si il y a des inserts avec des accents, mais il aura déjà crée les tables. 
+Par contre alors il ne lira pas forcement bien tout le script. 
+On va donc commenter ce qui nous dérange:
+https://www.sqlite.org/lang_comment.html
+
+    ~/StationMeteo/doc/model $ sqlite3 schema.db
+
+    sqlite> .read schema.sqlite3.sql 
+
+    sqlite> .tables
+
+    sqlite> .quit
+
+    sqlautocode --declarative  sqlite:///schema.db
+    
+    sqlautocode --declarative  sqlite:///schema.db -o model.sqlite.py
+
+Il va bien créer un fichier, par contre avec sqlite3 Il ne vas pas retranscrire les clés étrangères. Par contre on aura le droit d'utiliser la classe sqlalchemy.String().
+
+NB: Commandes Mysql:
+====================
+Préparation de la base de données:
+
+    sudo mysql -u root -p
+
+    mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('nouveau_mot');
+    
+    mysql> GRANT ALL PRIVILEGES ON test_dia.* TO 'monty'@'localhost' IDENTIFIED BY 'passwd' WITH GRANT OPTION;
 
 References:
 ===========
