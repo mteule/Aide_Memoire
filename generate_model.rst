@@ -176,7 +176,8 @@ Il n'est pas présent dans les dépots, mais sur plusieurs sites d'où il peut �
     https://pypi.python.org/pypi/sqlautocode
 
 Pour l'installation, ni "sudo easy install ni pip" n'ont voulu marcher, mais par contre la solution "bourrine" marche:
-~/sqlautocode-0.7 $ sudo python setup.py install
+
+    ~/sqlautocode-0.7 $ sudo python setup.py install
 
 Attention il faut prendre la version 0.7 !
 
@@ -194,12 +195,33 @@ Il va falloir fouiller un peu dans les options.
 
 Après vérification ça marche en gardant les clés étrangères et les inserts:
 
-Apparemment ce n'est pas grave pour le latin1 dans le fichier SQL, car sqlautocode va de toute façon convertir par défaut en utf8 (cf options --help).
+Apparemment ce n'est pas grave pour le latin1 dans le fichier SQL source, car sqlautocode va de toute façon convertir par défaut en utf8 (cf options --help).
 
 Mais quoi qu'il en soit il faudra revenir plus tard sur ce problème de l'encodage avec mysql.
 
 Edition du model.py brut (mysql):
 ---------------------------------
+
+La mise en forme du fichier "model.py" généré est différente de celle de Flask, les liens sont dans le message Re:iidre-airqualité
+http://pythonhosted.org/Flask-SQLAlchemy/quickstart.html
+
+Différentes aussi de celle de sqlalchemy, apparemment la Table est seulement une partie de la classe qui est crée par Table:
+http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html#declare-a-mapping
+
+Bcp plus à ce qu'il y a pour pyramid:
+http://pylonsbook.com/en/1.1/introducing-the-model-and-sqlalchemy.html#metadata-and-type-apis
+
+Accessoirement il y a là des conseils utiles pour l'unicode.
+
+Edition du model.py declaratif (mysql):
+---------------------------------
+
+    http://turbogears.org/2.1/docs/main/Utilities/sqlautocode.html
+
+Le modèle de la doc de sqlalchemy est apparemment une variante améliorée du modèle "traditionnel" de pyramid.
+
+C'est "the declarative style of SQLAlchemy model definition".
+Il peut être théoriquement être obtenu en ajoutant simplement l'option " -d "
 
 
 References:
