@@ -5,8 +5,8 @@ Les paquets à installer:
 
     # apt-get install dia libparse-dia-sql-perl
     
-Création du diagramme:
-----------------------
+Création du diagramme: dia
+--------------------------
 
 La construction du diagramme se fait d'après la même méthode que pour tedia2sql [left.subtree].
 NB: Les id doivent être "protected" pour que ça compile, etc...
@@ -21,8 +21,8 @@ Ce sera indiqué dans le fichier .sql
 
 Il reste donc à corriger ce point.
 
-Generation du SQL:
-------------------
+Generation du SQL: parsediasql
+------------------------------
 
 C'est par la ligne de commande avec "parsediasql":
     
@@ -34,8 +34,8 @@ C'est par la ligne de commande avec "parsediasql":
     
     $ geany schema.sql 
     
-Vérification du SQL:
---------------------
+Vérification du SQL: mysql ou sqlite
+------------------------------------
 
     $ mysql -u root -p
     
@@ -53,8 +53,12 @@ Vérification du SQL:
 
     mysql> drop database test_dia;
  
-Generation du "model.py":
-=========================
+Generation du SQL à partir d'un Diagramme:
+==========================================
+Finalement il a été retenu d'utiliser:
+* "dia" pour créer le diagramme
+* "parsediasql" pour générer le sql correspondant
+* SGBD: "mysql"
 
 Génération du SQL avec "tedia2sql": Prbl...
 ----------------------------------- 
@@ -156,8 +160,53 @@ On obtient dans la sortie standard le fichier .sql généré.
 Cela permet déjà d'affiner le diagramme.
 La manière plus évoluée, qui permet d'avoir entre autre les clés étrangères et bien plus, est décrite pour tedia2sql [left.subtree].
 
+Conversion SQL vers "model.py":
+===============================
+
+Avec "mysql" et "sqlautocode"
+
+Pypi sqlautocode: Installation
+------------------------------
+Apparemment le module "sqlautocode" n'est plus très maintenu.
+
+Il n'est pas présent dans les dépots, mais sur plusieurs sites d'où il peut être téléchargé:
+
+    https://code.google.com/p/sqlautocode/
+
+    https://pypi.python.org/pypi/sqlautocode
+
+Pour l'installation, ni "sudo easy install ni pip" n'ont voulu marcher, mais par contre la solution "bourrine" marche:
+~/sqlautocode-0.7 $ sudo python setup.py install
+
+Attention il faut prendre la version 0.7 !
+
+Pypi sqlautocode: avec Mysql
+----------------------------
+NB: Il faut au préalable créer la base de données "test_dia".
+
+    ~/ $ sqlautocode mysql://root@localhost/test_dia 
+
+    ~/ $ sqlautocode mysql://root@localhost/test_dia -o model.py
+
+C'est la bonne ligne de commande, celle de googlecode ne marche plus et renvoie des erreurs, et il faut absolument mettre l'objet à produire APRES la phrase de connection.
+
+Il va falloir fouiller un peu dans les options.
+
+Après vérification ça marche en gardant les clés étrangères et les inserts:
+
+Apparemment ce n'est pas grave pour le latin1 dans le fichier SQL, car sqlautocode va de toute façon convertir par défaut en utf8 (cf options --help).
+
+Mais quoi qu'il en soit il faudra revenir plus tard sur ce problème de l'encodage avec mysql.
+
+Edition du model.py brut (mysql):
+---------------------------------
+
+
 References:
 ===========
+
+References Diagramme => SQL:
+----------------------------
 
 [sql_dia] http://www.coderholic.com/automatic-sql-generation-using-dia/
 
