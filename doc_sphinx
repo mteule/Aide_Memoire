@@ -1,3 +1,45 @@
 Un lien très pratique viens de [python-hosted] et donne des informations simples et pratiques, avec en prime un exemple de structure de projet assez proche de ce que propose "Learn the Hard Way". Le lien se poursuit sur plusieurs pages.
 
+Création du Table Of Content:
+-----------------------------
+
+Il y a la liste des fichiers à insclure dans l'ordre dans le "Table of Content".
+
+Quand on a crée les fichiers .rst rien ne s'affichait dans la page html.
+C'est normal.
+En fait il va mettre dans la présentation html les TITRES qui sont contenus dans chacun des fichiers .rst .
+Ça se voit bien dans la documentation officielle de Sphinx:
+
+Dans le fichier "content.rst" des sources, 
+on voit en deuième place le fichier "tutorial.rst". 
+On voit aussi des entrées de la forme "markup/index".
+
+    https://bitbucket.org/birkenfeld/sphinx/raw/73418c51ee80fa9b976050a1d1d91e3700c41653/doc/contents.rst
+
+
+
+Pourtant dans la page html, en lieu et place de "tutorial" on peut lire "First Steps with Sphinx".
+
+    http://sphinx-doc.org/contents.html
+
+On voit bien dans les sources que ce qui apparait dans le menu de la page .html sont les titres des fichiers .rst.
+
+    https://bitbucket.org/birkenfeld/sphinx/src/73418c51ee80fa9b976050a1d1d91e3700c41653/doc/tutorial.rst?at=default
+    https://bitbucket.org/birkenfeld/sphinx/raw/73418c51ee80fa9b976050a1d1d91e3700c41653/doc/tutorial.rst
+
+On voit aussi que cette notation "markup/index" correspond à des dossiers dans la documentation.
+
+https://bitbucket.org/birkenfeld/sphinx/src/73418c51ee80fa9b976050a1d1d91e3700c41653/doc/?at=default
+
+Chacun de ces index.rst aura sa propre toctree:
+
+https://bitbucket.org/birkenfeld/sphinx/raw/73418c51ee80fa9b976050a1d1d91e3700c41653/doc/markup/index.rst
+
+En retournant voir la page .html,
+
+    http://sphinx-doc.org/contents.html
+
+On constate que cette arborescence avec des dossiers dans le "toctree" n'a pas vraiment d'incidence sur l'arborescence qui apparait dans le menu.
+C'est donc très vraisemblablement la profondeur des titres qui va compter.
+
 [python-hosted] http://pythonhosted.org/an_example_pypi_project/buildanduploadsphinx.html
