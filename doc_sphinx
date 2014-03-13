@@ -42,4 +42,18 @@ En retournant voir la page .html,
 On constate que cette arborescence avec des dossiers dans le "toctree" n'a pas vraiment d'incidence sur l'arborescence qui apparait dans le menu.
 C'est donc très vraisemblablement la profondeur des titres qui va compter.
 
+Modification ou changement du style par defaut:
+-----------------------------------------------
+Dans le fichier "conf.py", ce ne sera pas la ligne :
+
+    pygments_style = 'sphinx'
+
+mais les lignes:
+
+    html_theme = 'default'
+    #html_theme_options = {}
+
+    http://sphinx-doc.org/theming.html
+ 
+
 [python-hosted] http://pythonhosted.org/an_example_pypi_project/buildanduploadsphinx.html
