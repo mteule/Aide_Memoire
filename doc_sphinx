@@ -69,3 +69,7 @@ Très simple:
 refs:
     http://sphinx-doc.org/markup/code.html#showing-code-examples
     http://pygments.org/docs/lexers/
+
+Lien aide mémoire syntaxe des blocks en .rst, en particulier hyperlink
+-----------------------------------------------------------------------
+    http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#explicit-markup-blocks
