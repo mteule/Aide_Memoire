@@ -70,6 +70,10 @@ refs:
     http://sphinx-doc.org/markup/code.html#showing-code-examples
     http://pygments.org/docs/lexers/
 
+Autre chose, les lignes de codes de quelques langages:
+
+    http://sphinx-doc.org/domains.html#the-restructuredtext-domain
+
 Lien aide mémoire syntaxe des blocks en .rst, en particulier hyperlink
 -----------------------------------------------------------------------
     http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#explicit-markup-blocks
