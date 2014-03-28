@@ -77,3 +77,16 @@ Autre chose, les lignes de codes de quelques langages:
 Lien aide mémoire syntaxe des blocks en .rst, en particulier hyperlink
 -----------------------------------------------------------------------
     http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#explicit-markup-blocks
+    
+Problèmes ToC / "<no title>"
+----------------------------
+Il n'a pas été nécessaire de s'y plonger parce qu'il y a eu un coup de bol, mais au cas où ça arrive de nouveau.
+NB: Attention des fois il vaudra mieux faire un rm -rf build parce que le make html n'écrase pas bien tout les fichiers.
+
+    https://www.google.fr/search?output=search&sclient=psy-ab&q=%22%3Cno+title%3E%22+sphinx+python&btnK=
+    http://permalink.gmane.org/gmane.comp.python.sphinx.devel/5182    
+
+Exemple à suivre: Celery
+------------------------
+    https://github.com/celery/celery/blob/master/docs/index.rst
+    https://celery.readthedocs.org/en/latest/getting-started/introduction.html#what-is-a-task-queue
