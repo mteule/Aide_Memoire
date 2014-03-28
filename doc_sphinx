@@ -57,3 +57,15 @@ mais les lignes:
  
 
 [python-hosted] http://pythonhosted.org/an_example_pypi_project/buildanduploadsphinx.html
+
+Faire des citations de lignes de code venant d'autres langages
+---------------------------------------------------------------
+
+Très simple:
+
+.. code-block::
+    La/les lignes de code indentés
+    
+refs:
+    http://sphinx-doc.org/markup/code.html#showing-code-examples
+    http://pygments.org/docs/lexers/
