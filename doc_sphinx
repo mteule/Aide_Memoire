@@ -1,5 +1,22 @@
 Un lien très pratique viens de [python-hosted] et donne des informations simples et pratiques, avec en prime un exemple de structure de projet assez proche de ce que propose "Learn the Hard Way". Le lien se poursuit sur plusieurs pages.
 
+
+COMMANDES UTILES RÉGULIEREMENT:
+===============================
+
+NB: regénérer la doc:  http://sphinx-doc.org/tutorial.html#running-the-build
+---------------------
+$ cd doc
+$ make html
+
+Problèmes pour les "autocode":
+------------------------------
+Il faut réinstaller le paquet avec la commande
+$ sudo python setup.py install
+
+CRÉATION DE LA DOC:
+===================
+
 Création du Table Of Content:
 -----------------------------
 
@@ -90,3 +107,11 @@ Exemple à suivre: Celery
 ------------------------
     https://github.com/celery/celery/blob/master/docs/index.rst
     https://celery.readthedocs.org/en/latest/getting-started/introduction.html#what-is-a-task-queue
+    
+Problème pour Intersphinx:
+--------------------------
+
+
+
+
+
