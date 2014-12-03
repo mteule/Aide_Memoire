@@ -112,6 +112,7 @@ Exemple à suivre: Celery
 Problème pour Intersphinx
 -------------------------
 Apparemment il aurait pu y avoir deux problèmes pour qu'un packages appartenant au projet ne soit pas pris en compte dans intersphinx:
+(Pour la création d'un lien vers la page générée par 'automodule')
 
 Il faut créer une docstring """ docstring """ tout au début du fichier en dessous du shebang.
 
