@@ -7,6 +7,7 @@ COMMANDES UTILES RÉGULIEREMENT:
 NB: regénérer la doc:  http://sphinx-doc.org/tutorial.html#running-the-build
 ---------------------
 $ cd doc
+$ rm -rf build    # voir 'Problème pour Intersphinx'
 $ make html
 
 Problèmes pour les "autocode":
@@ -108,9 +109,13 @@ Exemple à suivre: Celery
     https://github.com/celery/celery/blob/master/docs/index.rst
     https://celery.readthedocs.org/en/latest/getting-started/introduction.html#what-is-a-task-queue
     
-Problème pour Intersphinx:
---------------------------
+Problème pour Intersphinx
+-------------------------
+Apparemment il aurait pu y avoir deux problèmes pour qu'un packages appartenant au projet ne soit pas pris en compte dans intersphinx:
 
+Il faut créer une docstring """ docstring """ tout au début du fichier en dessous du shebang.
+
+il ne faut pas oublier de faire un rm -rf doc/build parce que sinon le fait que certains fichiers soit présents empêche leur mise à jour par un fichier réécrit.
 
 
 
