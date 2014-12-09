@@ -8,6 +8,23 @@ mail des commits
 Pouvoir réécrire les adresses mails erronées si le git config a pas été bien fait:
 http://git-scm.com/book/en/Git-Tools-Rewriting-History#Reordering-Commits
 
+Sinon il est possible d'avoir le user name et le mail ou encore signing key en fonction du dépot si on ne met pas la mention ' --global ' :
+https://help.github.com/articles/setting-your-username-in-git/
+
+Créer rapidement un dépot:
+---------------------------
+mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin https://mteule@github.org/mteule/calc_to_postgres.git
+
+Create your first file, commit, and push
+
+echo "Mathias Teulé" >> contributors.txt
+git add contributors.txt
+git commit -m 'Initial commit with contributors'
+git push -u origin master
+
 Cloner +sieurs branches
 -----------------------
 Cloner une ou toutes les branches d'un dépot distant: 
