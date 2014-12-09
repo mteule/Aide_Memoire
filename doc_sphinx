@@ -118,6 +118,15 @@ Il faut créer une docstring """ docstring """ tout au début du fichier en dess
 
 il ne faut pas oublier de faire un rm -rf doc/build parce que sinon le fait que certains fichiers soit présents empêche leur mise à jour par un fichier réécrit.
 
+Faire des liens vers des fichiers téléchargeables
+----------------------------------
+http://sphinx-doc.org/markup/inline.html#referencing-downloadable-files
+
+An example:
+
+See :download:`this example script <../example.py>`.
+
+
 
 
 
