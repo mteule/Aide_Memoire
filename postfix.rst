@@ -31,4 +31,6 @@ https://serverfault.com/questions/268472/mailman-cannot-relay-e-mails-to-non-loc
 Les virtual aliases etc...:
 http://www.postfix.org/postconf.5.html#permit_mynetworks
 
+Partie super importante sur le TLS:
+http://www.postfix.org/TLS_README.html
 
