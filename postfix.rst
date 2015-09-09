@@ -24,5 +24,11 @@ http://unixmail.fr/blog/postfix-guide-survie-debutant
 Poster MUA MTA avec explications en Français
 http://arobaseinformatique.eklablog.com/configuration-simple-d-un-mta-avec-postfix-a106670964
 
+Problème Mailman non local
+==========================
+https://serverfault.com/questions/268472/mailman-cannot-relay-e-mails-to-non-local-domains
+
+Les virtual aliases etc...:
+http://www.postfix.org/postconf.5.html#permit_mynetworks
 
 
