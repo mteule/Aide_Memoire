@@ -9,3 +9,6 @@ http://www.avrfreaks.net/forum/atmega328p-spi-simultaneous-rs232-possible
 
 SPI et registre à décalage : matrice de LEDs
 http://ww.thomaspietrzak.com/enseignement/NIHM/spi.htm
+
+Les avis pour CMAKE, apparemment pour les AVR c'est pas encore ça:
+http://www.avrfreaks.net/forum/cmake-and-avr-any-experiencethoughts
