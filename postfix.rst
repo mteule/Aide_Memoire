@@ -9,3 +9,7 @@ http://www.hongkiat.com/blog/anonymous-email-providers/
 Simple: comment regarder les headers:
 http://www.ghacks.net/2013/11/14/find-email-provider-leaks-ip-address-recipients/
 
+Conseil généraux
+================
+https://doc.ubuntu-fr.org/tutoriel/comment_soumettre_un_probleme_postfix_sur_le_forum
+
