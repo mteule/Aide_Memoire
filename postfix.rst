@@ -21,4 +21,8 @@ http://www.linuxjournal.com/content/sending-email-netcat
 
 http://unixmail.fr/blog/postfix-guide-survie-debutant
 
+Poster MUA MTA avec explications en Français
+http://arobaseinformatique.eklablog.com/configuration-simple-d-un-mta-avec-postfix-a106670964
+
+
 
