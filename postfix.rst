@@ -15,3 +15,6 @@ https://doc.ubuntu-fr.org/tutoriel/comment_soumettre_un_probleme_postfix_sur_le_
 
 http://irp.nain-t.net/doku.php/170smtp:010_les_bases#utilite_de_l_en-tete
 http://irp.nain-t.net/doku.php/170smtp:start
+
+Pour envoyer à la main:
+http://www.linuxjournal.com/content/sending-email-netcat
