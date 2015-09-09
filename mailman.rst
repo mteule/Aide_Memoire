@@ -6,3 +6,11 @@ https://nsrc.org/helpdesk/mailman-move.html
 
 Editer mailman à la main
 http://www.hoboes.com/NetLife/pytown/mailman/viewing-mailman-config-files/
+
+Doc officielle:
+http://www.list.org/site.html
+
+Celle de l'user admin:
+https://www.gnu.org/software/mailman/admins.html
+https://www.gnu.org/software/mailman/mailman-admin/contents.html
+
