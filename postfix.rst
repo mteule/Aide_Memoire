@@ -18,3 +18,7 @@ http://irp.nain-t.net/doku.php/170smtp:start
 
 Pour envoyer à la main:
 http://www.linuxjournal.com/content/sending-email-netcat
+
+http://unixmail.fr/blog/postfix-guide-survie-debutant
+
+
