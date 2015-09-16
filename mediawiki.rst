@@ -5,4 +5,5 @@ https://www.mediawiki.org/wiki/Manual:Wiki_family
 L'install normal en français, utilise une interface oueb:
 https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki/fr#T.C3.A9l.C3.A9charger_MediaWiki
 
-
+Conseils spécifiques Postgres
+https://www.mediawiki.org/wiki/Manual:PostgreSQL
