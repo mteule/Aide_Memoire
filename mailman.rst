@@ -14,3 +14,9 @@ Celle de l'user admin:
 https://www.gnu.org/software/mailman/admins.html
 https://www.gnu.org/software/mailman/mailman-admin/contents.html
 
+Installs Mailman Postfix Debian:
+http://aniciumpc.fr/mailman-liste-de-diffusion-avec-postfix-debian-166/
+https://www.howtoforge.com/how-to-install-and-configure-mailman-with-postfix-on-debian-squeeze
+
+doc mailman différente de celle de Debian:
+https://www.gnu.org/software/mailman/mailman-install/postfix-integration.html
