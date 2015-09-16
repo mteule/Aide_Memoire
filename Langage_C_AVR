@@ -1,0 +1,16 @@
+En complement de AVR_uart_spi:
+
+Des tutos pour utiliser la LibC des AVR:
+
+Google "makefile avr"
+=====================
+
+http://www.nongnu.org/avr-libc/user-manual/group__largedemo.html
+http://www.nongnu.org/avr-libc/user-manual/group__demo__project.html
+
+Le livre de Make:
+https://github.com/hexagon5un/AVR-Programming/blob/master/setupProject/Makefile
+
+Un dernier:
+http://www.instructables.com/id/AVR-Programming-with-Arduino-AVRdude-and-AVR-gcc/step4/The-Makefile/
+
