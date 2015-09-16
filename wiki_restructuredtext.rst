@@ -9,3 +9,7 @@ Pour le wiki Moinmoin avec une sorte de shebang aussi
 
 Ce sera moins compliqué à maintenir que Zwiki
 qui utilise Zope (Cf liens de Docutils)
+
+Pour Pelican, la doc officielle pour importer un Wordpress:
+http://docs.getpelican.com/en/3.1.1/importer.html#import
+
